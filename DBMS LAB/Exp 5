@@ -1,0 +1,40 @@
+create table bus(busno int primary key ,from_place varchar(20),to_place varchar(20));
+insert into bus values(218,'koti','miyapur');
+insert into bus values(219,'secundarabad','isnapur');
+insert into bus values(225,'koti','patancharu');
+insert into bus values(224,'miyapur','gandimaisamma');
+alter table bus add Driver_name varchar(20);
+update bus set Driver_name = 'swamy';
+delete from bus where busno = 224 ;
+select * from bus;
+
+
+create table passenger(Passenger_no int primary key,Passenger_name varchar(20),Passenger_gender varchar(20));
+insert into passenger values(1201,'keerthi','Female');
+insert into passenger values(1202,'Tirupatamma','Female');
+insert into passenger values(1203,'Manasvi','Female');
+insert into passenger values(1204,'Usha','Female');
+update passenger set Passenger_name = 'UshaShree' where Passenger_no = 1204;
+select * from passenger;
+
+
+create table reservation(Passenger_no int primary key,Journey_date date,Passenger_name varchar(20),Passenger_gender varchar(20));
+insert into reservation values(1201,'2021-07-20','keerthi','Female');
+insert into reservation values(1202,'2021-07-21','Tirupatamma','Female');
+insert into reservation values(1203,'2021-07-22','Manasvi','Female');
+select * from reservation;
+
+
+create table ticket(ticketno int primary key,Journey_date Date,Arrival_time varchar(10),Destination_time varchar(6),age int(20));
+insert into ticket values(215,'2021-07-20','22:10','06:15',25);
+insert into ticket values(216,'2021-07-21','21:10','05:25',36);
+insert into ticket values(217,'2021-07-22','20:10','05:40',45);
+insert into ticket values(218,'2021-07-22','22:10','07:30',62);
+alter table ticket drop age ;
+select * from ticket;
+
+
+create table Cancellation(Cancellation_id int primary key,Journey_date date,reservation_date date,status varchar(20));
+insert into Cancellation values(1203,'2021-07-20','2021-01-15','confirm');
+insert into Cancellation values(1204,'2021-07-21','2021-06-12','confirm');
+select * from Cancellation;
